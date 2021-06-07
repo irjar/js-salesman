@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta http-equiv="Content-Security-Policy">
+        <script type="text/javascript" src="cordova.js"></script>
+        <!-- jQuery -->
+        <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+        <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+        <script type="text/javascript" id="jqm-trans-disable">
+            /* For having a faster transition */
+            $(document).on("mobileinit", function() {
+                            $.mobile.defaultPageTransition = "none";
+                            $.mobile.defaultDialogTransition = "none";
+            });
+        </script>
+        <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>        
+        <script type="text/javascript" src="js/index.js"></script>
+        <title>MegaMax Sale</title>
+    </head>
+    <body>
+        <div class="app">
+	   <h1>MegaMax Sale</h1>
+            <div data-role="controlgroup" data-type="horizontal">
+	   <!-- User Information -->
+		 
+	   <!--Input text fields, 
+        salesperson ID field have an ID "oucu", 
+        client ID field have an ID "clientID" 
+		-->
+				<form name="myForm">
+				<div class="field">
+					<label for="oucu">Salesperson:</label>
+					<input type="text" id="oucu" />
+
+					<label for="clientID">Client ID:</label>
+					<input type="text" id="clientID" />
+				</div>
+				</form>
+			</div>
+            
+			<div data-role="controlgroup" data-type="horizontal">
+	   
+	   <!-- Widget navigation buttons -->
+			<!-- Execute a JavaScript prevWidget() function when 'Prev Widget' button is clicked to see a previous widget-->
+				<button type=button id="prevWidget" onclick="app.megaMaxSale.prevWidget()">Prev Widget</button>
+			<!-- Execute a JavaScript nextWidget() function when 'Next Widget' button is clicked to see a next widget-->
+				<button type=button id="nextWidget" onclick="app.megaMaxSale.nextWidget()">Next Widget</button>
+			</div>
+			<!-- Number of Widgets field have an ID "numberOfWidgets" -->
+            <div class="field">
+					<label for="numberOfWidgets">Number of Widgets:</label>
+					<input type="text" id="numberOfWidgets" />
+			</div>
+			<!--set the width and hight of the widget's image, and its id as widgetImage-->
+			<img id="widgetImage" src="http://via.placeholder.com/150x150">	
+			
+			<div data-role="controlgroup" data-type="horizontal">
+	   
+	   <!-- Widget display-->
+			<!--Display the widget description and asking price-->
+			<p id="description"></p> 
+			<!-- Agreed Price field shall have an ID "agreedPrice" -->
+			<div class="field">
+					<label for="agreedPrice">Agreed Price:</label>
+					<input type="text" id="agreedPrice" />
+			</div>
+            <div data-role="controlgroup" data-type="horizontal">
+	   <!-- Order navigation buttons and display -->
+			<!-- Execute a JavaScript prevOrder() function when 'Prev Over' button is clicked to see a previous order-->
+				<button type=button id="prevOrder" onclick="app.megaMaxSale.prevOrder()">Prev Order</button>
+			<!-- Execute a JavaScript nextOrder() function when 'Next Order' button is clicked to see a next order-->
+				<button type=button id="nextOrder" onclick="app.megaMaxSale.nextOrder()">Next Order</button>
+				<!-- Execute a JavaScript addToOrder() function when 'Add to Order' button is clicked-->
+				<button type=button id="addToOrder" onclick="app.megaMaxSale.addToOrder()">Add to Order</button>
+			<!-- Execute a JavaScript placeNewOrder() function when 'Place New Order' button is clicked-->
+				<button type=button id="placeNewOrder" onclick="app.megaMaxSale.placeNewOrder()">Place New Order</button>
+
+
+			<br>
+			<br>
+			<br>
+			<br>
+			<!-- Display current order details-->
+				<p id="orderDetails"></p>
+				
+            </div>
+
+	   <!-- Map canvas -->
+			<div data-role="controlgroup" data-type="horizontal">
+
+			<!--Set the width and hight of the Google map, and the field id as map_canvas-->
+			<canvas style="width:100%;height:200px;" id="mapCanvas">
+            </canvas>
+
+			<!--set the width and hight of the map, and its id as map_canvas-->
+			<!--canvas style="width:100%;height:120px;" id="map_canvas"-->
+			
+			</div>
+    </body>
+</html>
